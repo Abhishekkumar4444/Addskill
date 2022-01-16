@@ -17,23 +17,18 @@
 
 <body>
     <script>
-        let y = 10;
-        let x = 10;
+     let n = 10;
 
-        let str = "";
-
-        for (let i = 1; i < y; i++) {
-            for (let j = 1; j < x; j++) {
-                if (i + j >= y) {
-                    str = str.concat("*");
+        for (let i = 1; i < n; i++) {
+            for (let j = 1; j < n; j++) {
+                if (i + j >= n) {
+                    document.write("*");
                 } else {
-                    str = str.concat("&nbsp");
+                    document.write("&nbsp");
                 }
             }
-            str = str.concat("<br>");
+            document.write("<br>");
         }
-
-        document.write(str)
     </script>
 </body>
 
