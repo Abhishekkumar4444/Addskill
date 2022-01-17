@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function happyNumber(n) {
+            let previousSum = new Set();
+            while (n != 1) {
+                let currentsum = 0;
+                while (n > 0) {
+                    currentsum += (n % 10) * (n % 10);
+                    // console.log(currentsum);
+
+                    n = Math.floor(n / 10);
+
+                }
+                if (!previousSum.has(currentsum)) {
+                    previousSum.add(currentsum);
+                    n = currentsum;
+                } else {
+                    return "Not A Happy Number";
+                }
+                console.log(n);
+
+            }
+
+            return "Happy Number";
+        }
+        console.log(happyNumber(19));
+
+
+        // ------------------>First  five Happy number--------------------->
+
+        function happy_number(num) {
+            var m, n;
+            var c = [];
+
+            while (num != 1 && c[num] !== true) {
+                c[num] = true;
+                m = 0;
+                while (num > 0) {
+                    n = num % 10;
+                    m += n * n;
+                    num = (num - n) / 10;
+                }
+                num = m;
+            }
+            return (num == 1);
+        }
+
+        var cnt = 5;
+        var num = 1;
+        var f5 = '';
+        while (cnt-- > 0) {
+            while (!happy_number(num))
+                num++;
+            f5 = f5 + (num + ", ");
+
+            num++;
+        }
+        console.log('First 5 happy numbers are : ' + f5);
+    </script>
+</body>
+
+</html>
